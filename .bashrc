@@ -1,0 +1,55 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# Instead of this, copy:
+# /usr/share/terminfo/r/rxvt-unicode into ~/.terminfo/r/rxvt-unicode
+# /usr/share/terminfo/r/rxvt-unicode-256color into ~/.terminfo/r/rxvt-unicode-256color
+#export TERM=xterm
+
+# Exporting nickname
+export USER_NICKNAME="Rodolphe Breard"
+
+# Exporting DEB settings
+export DEBEMAIL="rodolphe.breard@uraniborg.net"
+export DEBFULLNAME="$USER_NICKNAME"
+
+# Colors
+eval $(dircolors -b)
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# Set the prompt
+#PS1="\[\033[01;31m\]\u\[\033[01;37m\]@\[\033[01;33m\]\h\[\033[01;31m\]->\[\033[00m\] "
+PS1="\[\033[01;31m\]\u\[\033[01;37m\]@\[\033[01;33m\]\h\[\033[01;31m\]->\[\033[00m\] "
+#PS1='\u@\h-> '
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+complete -cf sudo
+
+# exporting editor
+export EDITOR='emacs'
