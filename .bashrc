@@ -23,6 +23,9 @@ eval $(dircolors -b)
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# don't save lines matching the previous history entry
+export HISTCONTROL=ignoredups
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 
 # check the window size after each command and, if necessary,
