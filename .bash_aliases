@@ -7,6 +7,7 @@ alias l='ls -lihA'
 
 alias grep='grep -n --color=auto'
 alias j='jobs'
+alias emacs='TERM=xterm emacs'
 alias ne='emacs'
 alias df='df -h'
 alias top='htop'
