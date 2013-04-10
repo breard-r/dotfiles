@@ -17,6 +17,11 @@ export USER_NICKNAME="Rodolphe Breard"
 export DEBEMAIL="rodolphe.breard@uraniborg.net"
 export DEBFULLNAME="$USER_NICKNAME"
 
+# Ruby bin directory
+if [ -d "$HOME/.gem/ruby/2.0.0/bin" ]; then
+    export PATH="$PATH:$HOME/.gem/ruby/2.0.0/bin"
+fi
+
 # Colors
 eval $(dircolors -b)
 
