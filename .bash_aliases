@@ -1,9 +1,9 @@
 alias sudo='sudo '
 
 if [ "$OSTYPE" == "FreeBSD" ]; then
-    alias ls='ls --color=auto'
-else
     alias ls='ls -D'
+else
+    alias ls='ls --color=auto'
 fi
 alias ll='ls -lih'
 alias la='ls -A'
