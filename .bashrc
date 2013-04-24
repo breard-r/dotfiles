@@ -22,8 +22,11 @@ if [ -d "$HOME/.gem/ruby/2.0.0/bin" ]; then
     export PATH="$PATH:$HOME/.gem/ruby/2.0.0/bin"
 fi
 
+# OS
+OS_TYPE=$(echo "$OSTYPE" | sed 's/\([a-zA-Z_\-]*\).*/\1/g')
+
 # Colors
-if [ "$OSTYPE" != "FreeBSD" ]; then
+if [ "$OS_TYPE" != "freebsd" ]; then
     eval $(dircolors -b)
 fi
 
