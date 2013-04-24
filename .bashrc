@@ -23,7 +23,9 @@ if [ -d "$HOME/.gem/ruby/2.0.0/bin" ]; then
 fi
 
 # Colors
-eval $(dircolors -b)
+if [ "$OSTYPE" != "FreeBSD" ]; then
+    eval $(dircolors -b)
+fi
 
 # append to the history file, don't overwrite it
 shopt -s histappend
