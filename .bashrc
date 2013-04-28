@@ -18,8 +18,12 @@ export DEBEMAIL="rodolphe.breard@uraniborg.net"
 export DEBFULLNAME="$USER_NICKNAME"
 
 # Ruby bin directory
-if [ -d "$HOME/.gem/ruby/2.0.0/bin" ]; then
-    export PATH="$PATH:$HOME/.gem/ruby/2.0.0/bin"
+if [ -d "$HOME/.gem/ruby" ]; then
+    for file in $HOME/.gem/ruby/*; do
+	if [ -d "$file" -a -d "$file/bin" ]; then
+	    export PATH="$PATH:$file/bin"
+	fi
+    done
 fi
 
 # OS
