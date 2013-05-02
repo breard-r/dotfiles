@@ -10,6 +10,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+-- Vicious
+local vicious = require("vicious")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -83,7 +85,7 @@ end
 -- Define a tag table which will hold all screen tags.
 tags = {
    names  = { "main", "www", "im", "email", "media", "misc" },
-   layout = { layouts[6], layouts[8], layouts[1], layouts[8], layouts[1], layouts[1] }
+   layout = { layouts[6], layouts[8], layouts[2], layouts[8], layouts[6], layouts[1] }
 }
 for s = 1, screen.count() do
    -- Each screen has its own tag table.
@@ -121,6 +123,39 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
+
+-- Separator
+separatorwidget = wibox.widget.textbox()
+separatorwidget:set_text(" ")
+
+-- Memory usage
+memwidget = awful.widget.graph()
+memwidget:set_width(35)
+memwidget:set_background_color("#494B4F")
+memwidget:set_border_color(nil)
+memwidget:set_color("#CFCE44")
+vicious.register(memwidget, vicious.widgets.mem, "$1", 1)
+
+-- CPU widget
+cpuwidget = awful.widget.graph()
+cpuwidget:set_width(35)
+cpuwidget:set_background_color("#494B4F")
+cpuwidget:set_color("#96AECF")
+vicious.register(cpuwidget, vicious.widgets.cpu, "$1", 1)
+
+-- Battery widget
+batwidget = awful.widget.progressbar()
+batwidget:set_width(8)
+batwidget:set_height(10)
+batwidget:set_vertical(true)
+batwidget:set_background_color("#494B4F")
+batwidget:set_border_color(nil)
+batwidget:set_color({type="linear", from = {0, 0}, to = {0, 20}, stops = { {0, "#AECF96"}, {0.5, "#88A175"}, {1.0, "#FF5656"} } })
+vicious.register(batwidget, vicious.widgets.bat, "$2", 60, "BAT0")
+
+-- Mirror
+mirror = wibox.layout.mirror()
+mirror:set_widget(cpuwidget)
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -199,6 +234,12 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(separatorwidget)
+    right_layout:add(cpuwidget)
+    right_layout:add(separatorwidget)
+    right_layout:add(memwidget)
+    right_layout:add(separatorwidget)
+    right_layout:add(batwidget)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
