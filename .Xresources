@@ -1,7 +1,7 @@
 xterm*background: #000000
 xterm*foreground: #ffffff
 
-URxvt.depth: 32
-URxvt.background: [95]#000000
-URxvt.foreground: #ffffff
-URxvt.scrollBar: false
+URxvt*.depth: 32
+URxvt*.background: [95]#000000
+URxvt*.foreground: #ffffff
+URxvt*.scrollBar: false
