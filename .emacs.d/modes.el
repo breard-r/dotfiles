@@ -20,6 +20,7 @@
 
 ;; JSON
 (setq auto-mode-alist (cons '("\.json$" . js-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\.geojson$" . js-mode) auto-mode-alist))
 
 ;; HTML
 (setq auto-mode-alist (cons '("\.template$" . html-mode) auto-mode-alist))
