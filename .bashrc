@@ -70,3 +70,8 @@ complete -cf sudo
 
 # exporting editor
 export EDITOR='emacs'
+
+# rbenv
+if hash rbenv 2>/dev/null; then
+    eval "$(rbenv init -)"
+fi
