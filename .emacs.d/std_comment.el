@@ -208,6 +208,90 @@
 	"OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n")
       )
 
+(setq license-cecill
+      '("This software is governed by the CeCILL license under French law and\n"
+	"abiding by the rules of distribution of free software. You can use,\n"
+	"modify and/ or redistribute the software under the terms of the CeCILL\n"
+	"license as circulated by CEA, CNRS and INRIA at the following URL\n"
+	"\"http://www.cecill.info\".\n"
+	"\n"
+	"As a counterpart to the access to the source code and rights to copy,\n"
+	"modify and redistribute granted by the license, users are provided only\n"
+	"with a limited warranty and the software's author, the holder of the\n"
+	"economic rights, and the successive licensors have only limited\n"
+	"liability.\n"
+	"\n"
+	"In this respect, the user's attention is drawn to the risks associated\n"
+	"with loading, using, modifying and/or developing or reproducing the\n"
+	"software by the user in light of its specific status of free software,\n"
+	"that may mean that it is complicated to manipulate, and that also\n"
+	"therefore means that it is reserved for developers and experienced\n"
+	"professionals having in-depth computer knowledge. Users are therefore\n"
+	"encouraged to load and test the software's suitability as regards their\n"
+	"requirements in conditions enabling the security of their systems and/or\n" 
+	"data to be ensured and, more generally, to use and operate it in the \n"
+	"same conditions as regards security.\n"
+	"\n"
+	"The fact that you are presently reading this means that you have had\n"
+	"knowledge of the CeCILL license and that you accept its terms.\n")
+      )
+
+(setq license-cecill-b
+      '("This software is governed by the CeCILL-B license under French law and\n"
+	"abiding by the rules of distribution of free software. You can use,\n"
+	"modify and/ or redistribute the software under the terms of the CeCILL-B\n"
+	"license as circulated by CEA, CNRS and INRIA at the following URL\n"
+	"\"http://www.cecill.info\".\n"
+	"\n"
+	"As a counterpart to the access to the source code and rights to copy,\n"
+	"modify and redistribute granted by the license, users are provided only\n"
+	"with a limited warranty and the software's author, the holder of the\n"
+	"economic rights, and the successive licensors have only limited\n"
+	"liability.\n"
+	"\n"
+	"In this respect, the user's attention is drawn to the risks associated\n"
+	"with loading, using, modifying and/or developing or reproducing the\n"
+	"software by the user in light of its specific status of free software,\n"
+	"that may mean that it is complicated to manipulate, and that also\n"
+	"therefore means that it is reserved for developers and experienced\n"
+	"professionals having in-depth computer knowledge. Users are therefore\n"
+	"encouraged to load and test the software's suitability as regards their\n"
+	"requirements in conditions enabling the security of their systems and/or\n" 
+	"data to be ensured and, more generally, to use and operate it in the \n"
+	"same conditions as regards security.\n"
+	"\n"
+	"The fact that you are presently reading this means that you have had\n"
+	"knowledge of the CeCILL-B license and that you accept its terms.\n")
+      )
+
+(setq license-cecill-c
+      '("This software is governed by the CeCILL-C license under French law and\n"
+	"abiding by the rules of distribution of free software. You can use,\n"
+	"modify and/ or redistribute the software under the terms of the CeCILL-C\n"
+	"license as circulated by CEA, CNRS and INRIA at the following URL\n"
+	"\"http://www.cecill.info\".\n"
+	"\n"
+	"As a counterpart to the access to the source code and rights to copy,\n"
+	"modify and redistribute granted by the license, users are provided only\n"
+	"with a limited warranty and the software's author, the holder of the\n"
+	"economic rights, and the successive licensors have only limited\n"
+	"liability.\n"
+	"\n"
+	"In this respect, the user's attention is drawn to the risks associated\n"
+	"with loading, using, modifying and/or developing or reproducing the\n"
+	"software by the user in light of its specific status of free software,\n"
+	"that may mean that it is complicated to manipulate, and that also\n"
+	"therefore means that it is reserved for developers and experienced\n"
+	"professionals having in-depth computer knowledge. Users are therefore\n"
+	"encouraged to load and test the software's suitability as regards their\n"
+	"requirements in conditions enabling the security of their systems and/or\n" 
+	"data to be ensured and, more generally, to use and operate it in the \n"
+	"same conditions as regards security.\n"
+	"\n"
+	"The fact that you are presently reading this means that you have had\n"
+	"knowledge of the CeCILL-C license and that you accept its terms.\n")
+      )
+
 (defun std-file-header ()
   "Puts a standard header at the beginning of the file.\n(According to mode)"
   (interactive)
@@ -242,6 +326,12 @@
 	(setq ltow license-bsd))
     (if (string= license "isc")
 	(setq ltow license-isc))
+    (if (string= license "cecill")
+	(setq ltow license-cecill))
+    (if (string= license "cecill-b")
+	(setq ltow license-cecill-b))
+    (if (string= license "cecill-c")
+	(setq ltow license-cecill-c))
     (if (string= license "beer")
 	(setq ltow license-beer))
     (if ltow
