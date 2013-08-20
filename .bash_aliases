@@ -17,3 +17,5 @@ alias df='df -h'
 alias top='htop'
 
 alias lock='xscreensaver-command --lock'
+
+alias meteo='curl -s --user-agent "USER FUCKING AGENT" "http://thefuckingweather.com/?where=Paris" | grep "<p class=\"remark\">" | sed -r "s/.*>(.*)<.*/\1 OUTSIDE\!/g"'
