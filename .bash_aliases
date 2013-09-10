@@ -11,10 +11,11 @@ alias l='ls -lihA'
 
 alias grep='grep -n --color=auto'
 alias j='jobs'
-alias emacs='TERM=xterm emacs'
+alias emacs='emacs'
 alias ne='emacs'
 alias df='df -h'
 alias top='htop'
+alias weechat-curses='TERM=screen-256color weechat-curses'
 
 alias lock='xscreensaver-command --lock'
 
