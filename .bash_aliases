@@ -14,7 +14,7 @@ alias j='jobs'
 alias emacs='emacs'
 alias ne='emacs'
 alias df='df -h'
-alias top='htop'
+alias top='TERM=screen-256color htop'
 alias weechat-curses='TERM=screen-256color weechat-curses'
 
 alias lock='xscreensaver-command --lock'
