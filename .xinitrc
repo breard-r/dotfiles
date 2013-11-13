@@ -7,6 +7,7 @@ case "$1" in
 	[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 	xcompmgr &
 	/usr/bin/xscreensaver -no-splash &
+	eval $(/usr/bin/gpg-agent --daemon --enable-ssh-support --write-env-file "${HOME}/.gpg-agent-info")
 	exec awesome
 	;;
     weston|weston-launch)
