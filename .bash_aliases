@@ -20,3 +20,14 @@ alias weechat='TERM=screen-256color weechat'
 alias lock='xscreensaver-command --lock'
 
 alias meteo='curl -s --user-agent "USER FUCKING AGENT" "http://thefuckingweather.com/?where=Paris" | grep "<p class=\"remark\">" | sed -r "s/.*>(.*)<.*/\1 OUTSIDE\!/g"'
+
+fliptable() { echo "（╯°□°）╯ ┻━┻"; }
+
+# Usage: venv project_name
+# Activate the python virtualenv for <project_name>.
+venv()
+{
+    if [ -f "${HOME}/venvs/$1/bin/activate" ]; then
+	. "${HOME}/venvs/$1/bin/activate"
+    fi
+}
