@@ -26,6 +26,11 @@ if [ -d "$HOME/.gem/ruby" ]; then
     done
 fi
 
+# Ryzom
+if [ -d "$HOME/ryzom/client" ]; then
+    export PATH="$PATH:$HOME/ryzom/client"
+fi
+
 # OS
 OS_TYPE=$(echo "$OSTYPE" | sed 's/\([a-zA-Z_\-]*\).*/\1/g')
 
