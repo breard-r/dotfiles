@@ -11,7 +11,6 @@ alias l='ls -lihA'
 
 alias grep='grep -n --color=auto'
 alias j='jobs'
-alias emacs='emacs'
 alias ne='emacs'
 alias df='df -h'
 alias top='TERM=screen-256color htop'
