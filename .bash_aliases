@@ -20,6 +20,10 @@ alias lock='xscreensaver-command --lock'
 
 alias meteo='curl -s --user-agent "USER FUCKING AGENT" "http://thefuckingweather.com/?where=Paris" | grep "<p class=\"remark\">" | sed -r "s/.*>(.*)<.*/\1 OUTSIDE\!/g"'
 
+if [ -d "$HOME/ryzom/client" ]; then
+    alias ryzom='cd $HOME/ryzom/client && ./ryzom_client'
+fi
+
 fliptable() { echo "（╯°□°）╯ ┻━┻"; }
 
 # Usage: venv project_name
