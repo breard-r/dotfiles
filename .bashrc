@@ -47,9 +47,13 @@ export HISTCONTROL=ignoredups
 shopt -s checkwinsize
 
 # Set the prompt
-#PS1="\[\033[01;31m\]\u\[\033[01;37m\]@\[\033[01;33m\]\h\[\033[01;31m\]->\[\033[00m\] "
-PS1="\[\033[01;31m\]\u\[\033[01;37m\]@\[\033[01;33m\]\h\[\033[01;31m\]->\[\033[00m\] "
-#PS1='\u@\h-> '
+if [ -f /usr/bin/liquidprompt ]; then
+    unset PROMPT_COMMAND
+    source /usr/bin/liquidprompt
+else
+    PS1="\[\033[01;31m\]\u\[\033[01;37m\]@\[\033[01;33m\]\h\[\033[01;31m\]->\[\033[00m\] "
+    #PS1='\u@\h-> '
+fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
