@@ -72,8 +72,9 @@ if [ -f /etc/bash_completion ]; then
 fi
 complete -cf sudo
 
-# exporting editor
+# exporting editor and pager
 export EDITOR='emacs'
+export PAGER='less'
 
 # rbenv
 if hash rbenv 2>/dev/null; then
