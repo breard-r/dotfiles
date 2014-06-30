@@ -9,7 +9,7 @@ alias ll='ls -lih'
 alias la='ls -A'
 alias l='ls -lihA'
 
-alias grep='grep -nH --color=auto'
+alias grep='grep -n --color=auto'
 alias j='jobs'
 alias ne='emacs'
 alias df='df -h'
