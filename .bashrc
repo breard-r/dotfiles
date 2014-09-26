@@ -26,6 +26,11 @@ if [ -d "$HOME/.gem/ruby" ]; then
     done
 fi
 
+# Custom bin directory
+if [ -d "$HOME/bin" ]; then
+    export PATH="$PATH:$HOME/bin"
+fi
+
 # OS
 OS_TYPE=$(echo "$OSTYPE" | sed 's/\([a-zA-Z_\-]*\).*/\1/g')
 
