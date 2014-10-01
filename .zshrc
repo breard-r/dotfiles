@@ -27,7 +27,7 @@ else
 fi
 
 # Aliases
-if [[ "$(uname -s | tr '[:upper:]' '[:lower:]')" == 'linux' ]]; then
+if [ "$(uname -s | tr '[:upper:]' '[:lower:]')" = 'linux' ]; then
     alias ls='ls --color=auto'
 fi
 alias ll='ls -lih'
