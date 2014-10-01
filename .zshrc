@@ -5,8 +5,7 @@ CLICOLOR=1
 EDITOR='emacs'
 PAGER='less'
 
-setopt appendhistory
-unsetopt beep
+setopt nobeep appendhistory histignoredups histignorespace autocd extendedglob nomatch notify correct_all
 bindkey -e
 bindkey "^[[3~"  delete-char
 bindkey "^[3;5~" delete-char
