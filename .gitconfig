@@ -1,43 +1,45 @@
 [user]
-	name = Rodolphe Breard
-	email = rodolphe@what.tf
+    name = Rodolphe Breard
+    email = rodolphe@what.tf
 
 [core]
-	editor = emacs
+    editor = emacs
 
 [push]
-	default = simple
+    default = simple
 
 [alias]
-	co = checkout
-	df = diff
-	br = branch
-	ci = commit
-	st = status
-	unstage = reset HEAD --
-	last = log -1 HEAD
-	undo = reset --soft HEAD^
-	amend = commit --amend
-	random = !"git add -A; git commit -am \"$(echo $(curl -s http://whatthecommit.com/index.txt)\" (http://whatthecommit.com)\")\""
-	deliver = "!bash ~/builds/git-deliver/deliver.sh"
+    co = checkout
+    df = diff
+    br = branch
+    ci = commit
+    st = status
+    ls = log --oneline
+    caa = commit -a --amend -C HEAD
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    undo = reset --soft HEAD^
+    amend = commit --amend
+    new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+    bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
 
 [color]
-	branch = auto
-	diff = auto
-	status = auto
+    branch = auto
+    diff = auto
+    status = auto
 
 [color "branch"]
-       current = yellow reverse
-       local = yellow
-       remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
  
 [color "diff"]
-       meta = yellow bold
-       frag = magenta bold
-       old = red bold
-       new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
  
 [color "status"]
-       added = yellow
-       changed = green
-       untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
