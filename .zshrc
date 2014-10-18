@@ -5,6 +5,8 @@ CLICOLOR=1
 EDITOR='emacs'
 PAGER='less'
 
+export USER_NICKNAME="Rodolphe Breard"
+
 setopt nobeep appendhistory histignoredups histignorespace autocd extendedglob nomatch notify correct_all
 bindkey -e
 bindkey "^[[3~"  delete-char
