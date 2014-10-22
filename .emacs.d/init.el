@@ -1,5 +1,5 @@
 (add-to-list 'load-path "/usr/share/emacs/site-lisp")
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
 (load "modes.el")
 (load "std_comment.el")
