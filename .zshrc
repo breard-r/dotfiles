@@ -2,9 +2,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 CLICOLOR=1
-EDITOR='emacs'
-PAGER='less'
-
+export EDITOR='emacs'
+export PAGER='less'
 export USER_NICKNAME="Rodolphe Breard"
 
 setopt nobeep appendhistory histignoredups histignorespace autocd extendedglob nomatch notify correct_all
