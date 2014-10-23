@@ -1,0 +1,7 @@
+\timing on
+\setenv LESS -imx4F
+\x auto
+\pset null '[NULL]'
+
+\set HISTCONTROL ignorespace
+\set HISTSIZE 1000
