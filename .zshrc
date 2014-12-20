@@ -48,12 +48,3 @@ alias df='df -h'
 alias top='TERM=screen-256color htop'
 alias weechat='TERM=screen-256color weechat'
 alias lock='xscreensaver-command --lock'
-
-# Usage: venv project_name
-# Activate the python virtualenv for <project_name>.
-venv()
-{
-    if [ -f "${HOME}/venvs/$1/bin/activate" ]; then
-	    . "${HOME}/venvs/$1/bin/activate"
-    fi
-}
