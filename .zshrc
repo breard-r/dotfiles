@@ -5,9 +5,6 @@ CLICOLOR=1
 export EDITOR='emacs'
 export PAGER='less'
 export USER_NICKNAME="Rodolphe Breard"
-if [ -d "$HOME/bin" ]; then
-    export PATH="$PATH:$HOME/bin"
-fi
 
 setopt nobeep appendhistory histignoredups histignorespace autocd extendedglob nomatch notify correct_all
 bindkey -e
