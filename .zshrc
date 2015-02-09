@@ -1,10 +1,12 @@
-HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
-CLICOLOR=1
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=1000
+export CLICOLOR=1
 export EDITOR='emacs'
 export PAGER='less'
 export USER_NICKNAME="Rodolphe Breard"
+export PATH="$PATH:$HOME/bin"
+
 
 setopt nobeep appendhistory histignoredups histignorespace autocd extendedglob nomatch notify correct_all
 bindkey -e
@@ -23,8 +25,11 @@ elif [ -f "$HOME/liquidprompt/liquidprompt" ]; then
     unset PROMPT_COMMAND
     source "$HOME/liquidprompt/liquidprompt"
 else
-    PS1="\[\033[01;31m\]\u\[\033[01;37m\]@\[\033[01;33m\]\h\[\033[01;31m\]->\[\033[00m\] "
-    #PS1='\u@\h-> '
+    if [ "$CLICOLOR" -ne 0 ]; then
+        PS1="\[\033[01;31m\]\u\[\033[01;37m\]@\[\033[01;33m\]\h\[\033[01;31m\]->\[\033[00m\] "
+    else
+        PS1='\u@\h-> '
+    fi
 fi
 
 # Syntax-highlighting
@@ -36,9 +41,9 @@ fi
 if [ "$(uname -s | tr '[:upper:]' '[:lower:]')" = 'linux' ]; then
     alias ls='ls --color=auto'
 fi
-alias ll='ls -lih'
+alias ll='ls -lihF'
 alias la='ls -A'
-alias l='ls -lihA'
+alias l='ll -A'
 
 alias sudo='sudo '
 alias grep='grep -n --color=auto'

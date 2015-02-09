@@ -1,7 +1,3 @@
-if [ -d "$HOME/bin" ]; then
-    export PATH="$PATH:$HOME/bin"
-fi
-
 # pip zsh completion start
 function _pip_completion {
   local words cword
