@@ -4,6 +4,4 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-if hash pulseaudio 2>/dev/null; then
-    pulseaudio --start
-fi
+hash pulseaudio 2>/dev/null && pulseaudio --start

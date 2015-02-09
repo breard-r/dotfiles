@@ -85,9 +85,7 @@ export EDITOR='emacs'
 export PAGER='less'
 
 # rbenv
-if hash rbenv 2>/dev/null; then
-    eval "$(rbenv init -)"
-fi
+hash rbenv 2>/dev/null && eval "$(rbenv init -)"
 
 # GPG Agent
 if [ -f "${HOME}/.gpg-agent-info" ]; then
