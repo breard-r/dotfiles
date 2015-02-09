@@ -38,6 +38,17 @@ if [ -f "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.
     source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
+# GPG Agent
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+    . "${HOME}/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+fi
+export GPG_TTY=$(tty)
+
+# rbenv
+hash rbenv 2>/dev/null && eval "$(rbenv init -)"
+
 # Aliases
 if [ "$(uname -s | tr '[:upper:]' '[:lower:]')" = 'linux' ]; then
     alias ls='ls --color=auto'
