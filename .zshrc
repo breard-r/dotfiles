@@ -26,9 +26,10 @@ elif [ -f "$HOME/liquidprompt/liquidprompt" ]; then
     source "$HOME/liquidprompt/liquidprompt"
 else
     if [ "$CLICOLOR" -ne 0 ]; then
-        PS1="\[\033[01;31m\]\u\[\033[01;37m\]@\[\033[01;33m\]\h\[\033[01;31m\]->\[\033[00m\] "
+        autoload -U colors && colors
+        PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%M%{$fg[red]%}->%{$reset_color%} "
     else
-        PS1='\u@\h-> '
+        PS1='%n@%M-> '
     fi
 fi
 
