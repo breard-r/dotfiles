@@ -47,9 +47,7 @@ fi
 export GPG_TTY=$(tty)
 
 # rbenv
-if [[ ! ":$PATH:" == *":$HOME/.rbenv/shims:"* ]]; then
-    hash rbenv 2>/dev/null && eval "$(rbenv init -)"
-fi
+[[ ! ":$PATH:" == *":$HOME/.rbenv/shims:"* ]] && hash rbenv 2>/dev/null && eval "$(rbenv init -)"
 
 # Aliases
 if [ "$(uname -s | tr '[:upper:]' '[:lower:]')" = 'linux' ]; then
