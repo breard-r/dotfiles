@@ -5,7 +5,7 @@ export CLICOLOR=1
 export EDITOR='emacs'
 export PAGER='less'
 export USER_NICKNAME="Rodolphe Breard"
-export PATH="$PATH:$HOME/bin"
+[[ ":$PATH:" == *":$HOME/bin:"* ]] || export PATH="$PATH:$HOME/bin"
 
 
 setopt nobeep appendhistory histignoredups histignorespace autocd extendedglob nomatch notify correct_all
@@ -47,7 +47,9 @@ fi
 export GPG_TTY=$(tty)
 
 # rbenv
-hash rbenv 2>/dev/null && eval "$(rbenv init -)"
+if [[ ! ":$PATH:" == *":$HOME/.rbenv/shims:"* ]]; then
+    hash rbenv 2>/dev/null && eval "$(rbenv init -)"
+fi
 
 # Aliases
 if [ "$(uname -s | tr '[:upper:]' '[:lower:]')" = 'linux' ]; then

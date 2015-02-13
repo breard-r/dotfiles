@@ -28,7 +28,7 @@ fi
 
 # Custom bin directory
 if [ -d "$HOME/bin" ]; then
-    export PATH="$PATH:$HOME/bin"
+    [[ ":$PATH:" == *":$HOME/bin:"* ]] || export PATH="$PATH:$HOME/bin"
 fi
 
 # OS
