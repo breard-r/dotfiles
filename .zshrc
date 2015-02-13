@@ -1,3 +1,7 @@
+setopt nobeep appendhistory histignoredups histignorespace autocd extendedglob nomatch notify correct_all
+bindkey -e
+bindkey "^[[3~"  delete-char
+bindkey "^[3;5~" delete-char
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000
 export SAVEHIST=1000
@@ -5,13 +9,12 @@ export CLICOLOR=1
 export EDITOR='emacs'
 export PAGER='less'
 export USER_NICKNAME="Rodolphe Breard"
+export DEBEMAIL="packages+deb@what.tf"
+export DEBFULLNAME="$USER_NICKNAME"
 [[ ":$PATH:" == *":$HOME/bin:"* ]] || export PATH="$PATH:$HOME/bin"
 
-
-setopt nobeep appendhistory histignoredups histignorespace autocd extendedglob nomatch notify correct_all
-bindkey -e
-bindkey "^[[3~"  delete-char
-bindkey "^[3;5~" delete-char
+# Colors
+[ "$CLICOLOR" -ne 0 ] && hash dircolors 2>/dev/null && eval $(dircolors -b)
 
 # Command completion
 autoload -U compinit
@@ -20,10 +23,10 @@ compinit
 # Prompt
 if [ -f /usr/bin/liquidprompt ]; then
     unset PROMPT_COMMAND
-    source /usr/bin/liquidprompt
+    . /usr/bin/liquidprompt
 elif [ -f "$HOME/liquidprompt/liquidprompt" ]; then
     unset PROMPT_COMMAND
-    source "$HOME/liquidprompt/liquidprompt"
+    . "$HOME/liquidprompt/liquidprompt"
 else
     if [ "$CLICOLOR" -ne 0 ]; then
         autoload -U colors && colors
@@ -35,7 +38,7 @@ fi
 
 # Syntax-highlighting
 if [ -f "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
-    source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    . "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
 # GPG Agent
@@ -50,9 +53,7 @@ export GPG_TTY=$(tty)
 [[ ! ":$PATH:" == *":$HOME/.rbenv/shims:"* ]] && hash rbenv 2>/dev/null && eval "$(rbenv init -)"
 
 # Aliases
-if [ "$(uname -s | tr '[:upper:]' '[:lower:]')" = 'linux' ]; then
-    alias ls='ls --color=auto'
-fi
+[ "$(uname -s | tr '[:upper:]' '[:lower:]')" = 'linux' ] && alias ls='ls --color=auto'
 alias ll='ls -lihF'
 alias la='ls -A'
 alias l='ll -A'
