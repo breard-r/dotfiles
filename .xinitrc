@@ -7,6 +7,8 @@ hash xscreensaver 2>/dev/null && xscreensaver -no-splash &
 hash gpg-agent 2>/dev/null && eval $(gpg-agent --daemon --enable-ssh-support --write-env-file "${HOME}/.gpg-agent-info")
 
 DEFAULT_SESSION=awesome
+[[ ":$PATH:" == *":$HOME/bin:"* ]] || export PATH="$PATH:$HOME/bin"
+
 case "$1" in
     awesome|default|"")
 	exec awesome
