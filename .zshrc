@@ -66,3 +66,10 @@ alias df='df -h'
 alias weechat='TERM=screen-256color weechat'
 alias lock='xscreensaver-command --lock'
 hash htop 2>/dev/null && alias top='TERM=screen-256color htop'
+
+if hash chromium 2>/dev/null; then
+    chromium-tor() {
+        killall chromium
+        chromium --incognito --proxy-server="socks://localhost:9050"
+    }
+fi
