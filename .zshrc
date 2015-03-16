@@ -75,3 +75,11 @@ if hash chromium 2>/dev/null; then
         chromium --incognito --proxy-server="socks://localhost:9050"
     }
 fi
+
+stop_censorship() {
+    msg="Halte à la censure administrative du web !"
+    for ip in "90.85.16.50" "90.85.16.51" "90.85.16.52"
+    do
+        curl -s -o /dev/null --get --data-urlencode "msg=$msg" -H "Host: $msg" --user-agent "$msg" --referer "$msg" "http://$ip/"
+    done
+}
