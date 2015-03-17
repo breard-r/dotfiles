@@ -66,7 +66,6 @@ alias df='df -h'
 alias weechat='TERM=screen-256color weechat'
 alias lock='xscreensaver-command --lock'
 hash htop 2>/dev/null && alias top='TERM=screen-256color htop'
-hash dig 2>/dev/null && alias istheinternetonfire='dig +short txt istheinternetonfire.com'
 hash sqlmap 2>/dev/null && alias sqlmap='sqlmap --user-agent="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"'
 hash sqlmap 2>/dev/null && alias sqlmap-tor='sqlmap --tor --tor-type=SOCKS5'
 
@@ -75,6 +74,17 @@ if hash chromium 2>/dev/null; then
         killall chromium
         chromium --incognito --proxy-server="socks://localhost:9050"
     }
+fi
+
+if hash dig 2>/dev/null; then
+istheinternetonfire() {
+    txt=$(dig +short txt istheinternetonfire.com)
+    if hash cowsay 2>/dev/null; then
+        echo "$txt" | cowsay
+    else
+        echo "$txt"
+    fi
+}
 fi
 
 stop_censorship() {
