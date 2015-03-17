@@ -66,6 +66,7 @@ alias df='df -h'
 alias weechat='TERM=screen-256color weechat'
 alias lock='xscreensaver-command --lock'
 hash htop 2>/dev/null && alias top='TERM=screen-256color htop'
+hash dig 2>/dev/null && alias istheinternetonfire='dig +short txt istheinternetonfire.com'
 hash sqlmap 2>/dev/null && alias sqlmap='sqlmap --user-agent="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"'
 hash sqlmap 2>/dev/null && alias sqlmap-tor='sqlmap --tor --tor-type=SOCKS5'
 
