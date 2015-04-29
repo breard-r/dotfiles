@@ -91,6 +91,7 @@ stop_censorship() {
     msg="Halte à la censure administrative du web !"
     for ip in "90.85.16.50" "90.85.16.51" "90.85.16.52"
     do
-        curl -s -o /dev/null --get --data-urlencode "msg=$msg" -H "Host: $msg" --user-agent "$msg" --referer "$msg" "http://$ip/"
+        randmsg="$msg $(base64 </dev/urandom | tr -dc 'a-zA-Z0-9' | head -c10)"
+        curl -s -o /dev/null --get --data-urlencode "msg=$randmsg" -H "Host: $randmsg" --user-agent "$randmsg" --referer "$randmsg" "http://$ip/"
     done
 }
