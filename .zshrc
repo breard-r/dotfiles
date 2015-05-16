@@ -58,6 +58,7 @@ alias ll='ls -lihF'
 alias la='ls -A'
 alias l='ll -A'
 
+alias t='tree'
 alias sudo='sudo '
 alias grep='grep -n --color=auto'
 alias j='jobs'
