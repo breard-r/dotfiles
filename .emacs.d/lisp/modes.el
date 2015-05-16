@@ -3,6 +3,10 @@
 (setq auto-mode-alist (append '(("/*.\.python$" . python-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
 
+;; RUST
+(autoload 'rust-mode "rust-mode" "Rust editing mode." t)
+(setq auto-mode-alist (cons '("\.rs$" . rust-mode) auto-mode-alist))
+
 ;; LUA
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
