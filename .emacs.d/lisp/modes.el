@@ -7,6 +7,9 @@
 (autoload 'rust-mode "rust-mode" "Rust editing mode." t)
 (setq auto-mode-alist (cons '("\.rs$" . rust-mode) auto-mode-alist))
 
+;; Toml
+(setq auto-mode-alist (cons '("\.toml$" . conf-mode) auto-mode-alist))
+
 ;; LUA
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
