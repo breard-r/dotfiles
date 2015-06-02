@@ -10,7 +10,7 @@ DEFAULT_SESSION=awesome
 [[ ":$PATH:" == *":$HOME/bin:"* ]] || export PATH="$PATH:$HOME/bin"
 
 case "$1" in
-    awesome|default|"")
+    awesome)
 	exec awesome
 	;;
     qtile)
