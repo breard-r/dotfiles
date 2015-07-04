@@ -20,7 +20,7 @@
       std-css-alist             '( (cs . "/*") (cc . "** ") (ce . "*/") )
       std-cpp-alist             '( (cs . "//") (cc . "// ") (ce . "//") )
       std-pov-alist             '( (cs . "//") (cc . "// ") (ce . "//") )
-      std-python-alist          '( (cs . "##") (cc . "## ") (ce . "##") )
+      std-python-alist          '( (cs . "#") (cc . "# ") (ce . "#") )
       std-java-alist            '( (cs . "//") (cc . "// ") (ce . "//") )
       std-javascript-alist      '( (cs . "//") (cc . "// ") (ce . "//") )
       std-rust-alist            '( (cs . "//") (cc . "// ") (ce . "//") )
