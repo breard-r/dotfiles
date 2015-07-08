@@ -65,6 +65,7 @@ class ConfigWrapper:
         self._add_key('Left', lazy.screen.prev_group())
         self._add_key('w', lazy.window.kill())
         self._add_key('Return',  lazy.spawn(self.term))
+        self._add_key('l', lazy.spawn('xscreensaver-command --lock'))
         self._add_key('r', lazy.spawncmd())
         self._add_key('r', lazy.restart(), extra_mod='control')
         self._add_key('q', lazy.shutdown(), extra_mod='control')
