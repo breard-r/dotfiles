@@ -16,7 +16,7 @@
 
 
 from libqtile.config import Key, Screen, Group, Drag, Click
-from libqtile import layout, bar, widget
+from libqtile import layout, bar, widget, hook
 from libqtile.command import lazy
 from glob import glob
 import subprocess
@@ -125,9 +125,14 @@ class ConfigWrapper:
         return mouse
 
 
-if __name__ in ['config', '__main__']:
+@hook.subscribe.startup
+def startup():
     cnf = ConfigWrapper()
     cnf.set_wallpaper()
+
+
+if __name__ in ['config', '__main__']:
+    cnf = ConfigWrapper()
     groups = cnf.set_groups()
     layouts = cnf.set_layouts()
     screens = cnf.set_screens()
