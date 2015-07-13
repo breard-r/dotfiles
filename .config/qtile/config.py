@@ -35,8 +35,10 @@ class ConfigWrapper:
         self.groups = []
         self.layouts = []
 
-    def _add_key(self, key, action, *, extra_mod=None):
-        mod = [self.mod]
+    def _add_key(self, key, action, *, extra_mod=None, no_mod=False):
+        mod = []
+        if not no_mod:
+            mod.append(self.mod)
         if extra_mod:
             mod.append(extra_mod)
         k = Key(mod, key, action)
@@ -66,6 +68,11 @@ class ConfigWrapper:
         self._add_key('w', lazy.window.kill())
         self._add_key('Return',  lazy.spawn(self.term))
         self._add_key('l', lazy.spawn('xscreensaver-command --lock'))
+        self._add_key(
+            'Print',
+            lazy.spawn("scrot -e 'mv $f ~/pictures/ 2>/dev/null'"),
+            no_mod=True
+        )
         self._add_key('r', lazy.spawncmd())
         self._add_key('r', lazy.restart(), extra_mod='control')
         self._add_key('q', lazy.shutdown(), extra_mod='control')
