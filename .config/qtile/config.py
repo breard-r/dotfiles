@@ -44,8 +44,8 @@ class ConfigWrapper:
         k = Key(mod, key, action)
         self.keys.append(k)
 
-    def _add_group(self, name, position):
-        grp = Group(name, position=position)
+    def _add_group(self, name, position, **kwargs):
+        grp = Group(name, position=position, **kwargs)
         self.groups.append(grp)
         access_key = str(position + 1)
         self._add_key(access_key, lazy.group[name].toscreen())
@@ -79,17 +79,29 @@ class ConfigWrapper:
         return self.keys
 
     def set_groups(self):
-        names = ['main', 'www', 'remote', 'email', 'media', 'misc']
-        for i, name in enumerate(names):
-            self._add_group(name, i)
+        groups = [
+            ('main', {'layout': 'xmonad-tall'}),
+            ('www', {'layout': 'max'}),
+            ('remote', {'layout': 'max'}),
+            ('email', {'layout': 'max'}),
+            ('media', {'layout': 'xmonad-tall'}),
+            ('misc', {'layout': 'floating'}),
+        ]
+        for i, group in enumerate(groups):
+            name, opts = group
+            self._add_group(name, i, **opts)
         return self.groups
 
     def set_layouts(self):
         self.layouts = [
-            layout.MonadTall(border_focus=self.border_focus, align=1),
-            layout.Max(),
-            layout.Stack(border_focus=self.border_focus),
-            layout.Floating(border_focus=self.border_focus),
+            layout.MonadTall(
+                border_focus=self.border_focus,
+                align=1,
+                name='xmonad-tall'
+            ),
+            layout.Max(name='max'),
+            layout.Stack(border_focus=self.border_focus, name='stack'),
+            layout.Floating(border_focus=self.border_focus, name='floating'),
         ]
         return self.layouts
 
@@ -141,8 +153,8 @@ def startup():
 
 if __name__ in ['config', '__main__']:
     cnf = ConfigWrapper()
-    groups = cnf.set_groups()
     layouts = cnf.set_layouts()
+    groups = cnf.set_groups()
     screens = cnf.set_screens()
     mouse = cnf.set_mouse()
     keys = cnf.set_keys()
