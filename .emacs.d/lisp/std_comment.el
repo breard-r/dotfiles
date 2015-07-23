@@ -38,6 +38,7 @@
       std-sscript-alist         '( (cs . "#!/bin/sh")  (cc . "## ") (ce . "##") )
       std-perl-alist            '( (cs . "#!/usr/bin/perl -w")  (cc . "## ")(ce . "##") )
       std-cperl-alist           '( (cs . "#!/usr/bin/perl -w")  (cc . "## ")(ce . "##") )
+      std-rst-alist             '( (cs . ".. ") (cc . "   ") (ce . "") )
       )
 
 
@@ -73,7 +74,9 @@
                         ("Nroff"                . std-nroff-alist)
                         ("TeX"                  . std-latex-alist)
                         ("LaTeX"                . std-latex-alist)
-                        ("Rust"                 . std-rust-alist))
+                        ("Rust"                 . std-rust-alist)
+                        ("ReST"                 . std-rst-alist)
+                        )
       )
 
 (defun std-get (a)
