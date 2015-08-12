@@ -11,3 +11,11 @@ URxvt*.url-select.underline: true
 URxvt*.keysym.M-u: perl:url-select:select_next
 URxvt*.keysym.M-Escape: perl:keyboard-select:activate
 URxvt*.keysym.M-s: perl:keyboard-select:search
+URxvt*.font: xft:inconsolata:size=9
+URxvt*.letterSpace: -1
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
