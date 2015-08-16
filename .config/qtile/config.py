@@ -105,6 +105,16 @@ class ConfigWrapper:
         ]
         return self.layouts
 
+    def graph_params(self, color):
+        return dict(
+            width=70,
+            border_width=1,
+            line_width=1,
+            graph_color=color,
+            border_color=color,
+            fill_color=color,
+        )
+
     def set_screens(self):
         screens = [
             Screen(
@@ -114,6 +124,8 @@ class ConfigWrapper:
                         widget.Prompt(),
                         widget.WindowName(),
                         widget.Systray(),
+                        widget.MemoryGraph(**self.graph_params('#CFCE44')),
+                        widget.CPUGraph(**self.graph_params('#96AECF')),
                         widget.Clock(format=self.date_format),
                     ],
                     30,
