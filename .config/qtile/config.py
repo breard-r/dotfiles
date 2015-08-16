@@ -124,6 +124,11 @@ class ConfigWrapper:
                         widget.Prompt(),
                         widget.WindowName(),
                         widget.Systray(),
+                        widget.Battery(
+                            charge_char='↥',
+                            discharge_char='↧',
+                            update_delay=5
+                        ),
                         widget.MemoryGraph(**self.graph_params('#CFCE44')),
                         widget.CPUGraph(**self.graph_params('#96AECF')),
                         widget.Clock(format=self.date_format),
