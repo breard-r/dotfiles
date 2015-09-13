@@ -49,9 +49,6 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
 fi
 export GPG_TTY=$(tty)
 
-# rbenv
-[[ ! ":$PATH:" == *":$HOME/.rbenv/shims:"* ]] && hash rbenv 2>/dev/null && eval "$(rbenv init -)"
-
 # Aliases
 [ "$(uname -s | tr '[:upper:]' '[:lower:]')" = 'linux' ] && alias ls='ls --color=auto'
 alias ll='ls -lihF'

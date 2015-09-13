@@ -45,13 +45,5 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
 fi
 export GPG_TTY=$(tty)
 
-# rbenv
-hash rbenv 2>/dev/null && eval "$(rbenv init -)"
-if [ -d "$HOME/.gem/ruby" ]; then
-    for file in $HOME/.gem/ruby/*; do
-	    [ -d "$file" -a -d "$file/bin" ] && export PATH="$PATH:$file/bin"
-    done
-fi
-
 # Aliases
 [ -f "$HOME/.bash_aliases" ] && . ~/.bash_aliases
