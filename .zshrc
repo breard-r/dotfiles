@@ -6,7 +6,7 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=1000
 export SAVEHIST=1000
 export CLICOLOR=1
-export EDITOR='emacs'
+export EDITOR='vim'
 export PAGER='less'
 export USER_NICKNAME="Rodolphe Breard"
 export DEBEMAIL="packages+deb@what.tf"
@@ -58,7 +58,6 @@ alias t='tree'
 alias sudo='sudo '
 alias grep='grep -n --color=auto'
 alias j='jobs'
-alias ne='emacs'
 alias df='df -h'
 alias du='du -ch'
 alias weechat='TERM=screen-256color weechat'

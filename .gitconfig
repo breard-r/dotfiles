@@ -3,7 +3,7 @@
     email = rodolphe@what.tf
 
 [core]
-    editor = emacs
+    editor = vim
 
 [push]
     default = simple

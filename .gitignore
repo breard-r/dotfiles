@@ -5,3 +5,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 .emacs.d/auto-save-list/
+.vim/bundle/*
+!.vim/bundle/Vundle.vim
+.vim/.netrwhist
