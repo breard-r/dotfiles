@@ -14,7 +14,7 @@ case "$1" in
 	exec awesome
 	;;
     qtile)
-	exec qtile
+	exec qtile 2>/tmp/qtile.err.log
 	;;
     *) exec $DEFAULT_SESSION ;;
 esac
