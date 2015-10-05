@@ -43,3 +43,6 @@
     added = yellow
     changed = green
     untracked = cyan
+
+[commit]
+	template = ~/.git_commit_msg.txt
