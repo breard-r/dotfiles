@@ -45,4 +45,4 @@
     untracked = cyan
 
 [commit]
-	template = ~/.git_commit_msg.txt
+    template = ~/.git_commit_msg.txt
