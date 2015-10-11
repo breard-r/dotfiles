@@ -15,6 +15,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'antoyo/vim-licenses'
 call vundle#end()
 
 
@@ -46,3 +47,8 @@ nnoremap <leader><space> :nohlsearch<CR>
 " Move vertically by visual line.
 nnoremap j gj
 nnoremap k gk
+
+
+" Licenses
+let g:licenses_copyright_holders_name = $USER_NICKNAME
+let g:licenses_authors_name = $USER_NICKNAME
