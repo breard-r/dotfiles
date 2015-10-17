@@ -16,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'antoyo/vim-licenses'
+Plugin 'tomasr/molokai'
 call vundle#end()
 
 
