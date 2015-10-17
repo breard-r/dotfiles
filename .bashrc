@@ -9,7 +9,7 @@ shopt -s checkwinsize
 shopt -s histappend
 export HISTCONTROL=ignoredups
 export CLICOLOR=1
-export EDITOR='emacs'
+export EDITOR='vim'
 export PAGER='less'
 export USER_NICKNAME="Rodolphe Breard"
 export DEBEMAIL="packages+deb@what.tf"
