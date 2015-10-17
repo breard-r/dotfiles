@@ -8,15 +8,13 @@ filetype off
 " Install all plugins:
 " $ vim +PluginInstall +qall
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim   " Set the runtime path to include Vundle and initialize.
 call vundle#begin()
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'antoyo/vim-licenses'
-Plugin 'tomasr/molokai'
+Plugin 'VundleVim/Vundle.vim'       " Let Vundle manage Vundle, required.
+Plugin 'bling/vim-airline'          " Lean & mean status/tabline for vim that's light as air.
+Plugin 'scrooloose/nerdcommenter'   " Vim plugin for intensely orgasmic commenting.
+Plugin 'antoyo/vim-licenses'        " Vim Plugin that Provides Commands to Add Licenses at the Top of the Buffer.
+Plugin 'tomasr/molokai'             " Molokai color scheme for Vim.
 call vundle#end()
 
 
