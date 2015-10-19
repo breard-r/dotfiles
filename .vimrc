@@ -12,7 +12,6 @@ set rtp+=~/.vim/bundle/Vundle.vim   " Set the runtime path to include Vundle and
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'       " Let Vundle manage Vundle, required.
 Plugin 'bling/vim-airline'          " Lean & mean status/tabline for vim that's light as air.
-Plugin 'scrooloose/nerdcommenter'   " Vim plugin for intensely orgasmic commenting.
 Plugin 'antoyo/vim-licenses'        " Vim Plugin that Provides Commands to Add Licenses at the Top of the Buffer.
 Plugin 'breard-r/vim-dnsserial'     " Another DNS-zone serial number updater.
 Plugin 'sjl/badwolf'                " A Vim color scheme.
