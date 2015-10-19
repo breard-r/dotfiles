@@ -15,12 +15,12 @@ Plugin 'bling/vim-airline'          " Lean & mean status/tabline for vim that's 
 Plugin 'scrooloose/nerdcommenter'   " Vim plugin for intensely orgasmic commenting.
 Plugin 'antoyo/vim-licenses'        " Vim Plugin that Provides Commands to Add Licenses at the Top of the Buffer.
 Plugin 'breard-r/vim-dnsserial'     " Another DNS-zone serial number updater.
-Plugin 'tomasr/molokai'             " Molokai color scheme for Vim.
+Plugin 'sjl/badwolf'                " A Vim color scheme.
 call vundle#end()
 
 
 syntax on           " Enable syntax highlighting.
-colorscheme molokai " Select the theme.
+colorscheme badwolf " Select the theme.
 
 
 filetype plugin indent on " Load the plugin and indent file depending on the file type.
