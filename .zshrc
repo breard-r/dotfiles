@@ -74,12 +74,12 @@ if hash chromium 2>/dev/null; then
 fi
 
 if hash dig 2>/dev/null; then
-istheinternetonfire() {
-    txt=$(dig +short txt istheinternetonfire.com)
-    if hash cowsay 2>/dev/null; then
-        echo "$txt" | cowsay
-    else
-        echo "$txt"
-    fi
-}
+    istheinternetonfire() {
+        txt=$(dig +short txt istheinternetonfire.com)
+        if hash cowsay 2>/dev/null; then
+            echo "$txt" | cowsay
+        else
+            echo "$txt"
+        fi
+    }
 fi
