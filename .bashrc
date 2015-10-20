@@ -23,18 +23,16 @@ export DEBFULLNAME="$USER_NICKNAME"
 [ -f /etc/bash_completion ] && . /etc/bash_completion
 
 # Prompt
-if [ -f /usr/bin/liquidprompt ]; then
+if [ -f "/usr/bin/liquidprompt" ]; then
     unset PROMPT_COMMAND
-    . /usr/bin/liquidprompt
+    . "/usr/bin/liquidprompt"
 elif [ -f "$HOME/liquidprompt/liquidprompt" ]; then
     unset PROMPT_COMMAND
     . "$HOME/liquidprompt/liquidprompt"
+elif [ "$CLICOLOR" -ne 0 ]; then
+    PS1="\[\033[01;31m\]\u\[\033[01;37m\]@\[\033[01;33m\]\h\[\033[01;31m\]->\[\033[00m\] "
 else
-    if [ "$CLICOLOR" -ne 0 ]; then
-        PS1="\[\033[01;31m\]\u\[\033[01;37m\]@\[\033[01;33m\]\h\[\033[01;31m\]->\[\033[00m\] "
-    else
-        PS1='\u@\h-> '
-    fi
+    PS1='\u@\h-> '
 fi
 
 # GPG Agent

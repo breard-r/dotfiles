@@ -21,19 +21,17 @@ autoload -U compinit
 compinit
 
 # Prompt
-if [ -f /usr/bin/liquidprompt ]; then
+if [ -f "/usr/bin/liquidprompt" ]; then
     unset PROMPT_COMMAND
-    . /usr/bin/liquidprompt
+    . "/usr/bin/liquidprompt"
 elif [ -f "$HOME/liquidprompt/liquidprompt" ]; then
     unset PROMPT_COMMAND
     . "$HOME/liquidprompt/liquidprompt"
+elif [ "$CLICOLOR" -ne 0 ]; then
+    autoload -U colors && colors
+    PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%M%{$fg[red]%}->%{$reset_color%} "
 else
-    if [ "$CLICOLOR" -ne 0 ]; then
-        autoload -U colors && colors
-        PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%M%{$fg[red]%}->%{$reset_color%} "
-    else
-        PS1='%n@%M-> '
-    fi
+    PS1='%n@%M-> '
 fi
 
 # Syntax-highlighting
