@@ -51,3 +51,4 @@ nnoremap k gk
 " Licenses
 let g:licenses_copyright_holders_name = $USER_NICKNAME
 let g:licenses_authors_name = $USER_NICKNAME
+let g:licenses_default_commands = ['affero', 'apache', 'bsd3', 'cecill', 'gfdl', 'gpl', 'gplv2', 'isc', 'lgpl', 'mit', 'mpl', 'verbatim']
