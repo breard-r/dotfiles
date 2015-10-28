@@ -8,13 +8,14 @@ filetype off
 " Install all plugins:
 " $ vim +PluginInstall +qall
 
-set rtp+=~/.vim/bundle/Vundle.vim   " Set the runtime path to include Vundle and initialize.
+set rtp+=~/.vim/bundle/Vundle.vim    " Set the runtime path to include Vundle and initialize.
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'       " Let Vundle manage Vundle, required.
-Plugin 'bling/vim-airline'          " Lean & mean status/tabline for vim that's light as air.
-Plugin 'antoyo/vim-licenses'        " Vim Plugin that Provides Commands to Add Licenses at the Top of the Buffer.
-Plugin 'breard-r/vim-dnsserial'     " Another DNS-zone serial number updater.
-Plugin 'sjl/badwolf'                " A Vim color scheme.
+Plugin 'VundleVim/Vundle.vim'        " Let Vundle manage Vundle, required.
+Plugin 'bling/vim-airline'           " Lean & mean status/tabline for vim that's light as air.
+Plugin 'antoyo/vim-licenses'         " Vim Plugin that Provides Commands to Add Licenses at the Top of the Buffer.
+Plugin 'vim-utils/vim-troll-stopper' " Stop Unicode trolls from messing with your code.
+Plugin 'breard-r/vim-dnsserial'      " Another DNS-zone serial number updater.
+Plugin 'sjl/badwolf'                 " A Vim color scheme.
 call vundle#end()
 
 
