@@ -81,3 +81,28 @@ if hash dig 2>/dev/null; then
         fi
     }
 fi
+
+clean()
+{
+    clean_dir()
+    {
+        local dir="$1"
+        if [ -d "$dir" ]; then
+            find "$dir" -name "*~" -print -delete
+            find "$dir" -name ".*~" -print -delete
+            find "$dir" -name "#*#" -print -delete
+        else
+            echo "$dir: not a directory"
+        fi
+    }
+
+    if [ $# -ne 0 ]; then
+        for dir in "$@"; do
+            clean_dir "$dir"
+        done
+    else
+        clean_dir "./"
+    fi
+
+    unfunction clean_dir
+}
