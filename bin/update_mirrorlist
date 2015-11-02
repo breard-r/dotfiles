@@ -1,0 +1,21 @@
+#!/bin/sh
+
+mirror_file="$pacman_dir/mirrorlist"
+mirror_pacnew="$mirror_file.pacnew"
+mirror_orig="$mirror_file.orig"
+mirror_tmp="/tmp/mirrorlist.tmp"
+
+if [ -f "$mirror_pacnew" ]; then
+    echo "Using $mirror_file"
+    mv "$mirror_pacnew" "$mirror_orig"
+fi
+
+if [ ! -f "$mirror_orig" ]; then
+    echo "$mirror_orig: file not found" >&2
+    exit 1
+fi
+
+grep 'Server' "$mirror_orig" | tr -d "#" > "$mirror_tmp"
+rankmirrors -n 6 "$mirror_tmp" > "$mirror_file"
+rm -f "$mirror_tmp"
+pacman -Syy

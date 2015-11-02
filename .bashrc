@@ -44,4 +44,4 @@ fi
 export GPG_TTY=$(tty)
 
 # Aliases
-[ -f "$HOME/.bash_aliases" ] && . ~/.bash_aliases
+[ -f "$HOME/.aliases" ] && . "$HOME/.aliases"

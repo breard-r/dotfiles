@@ -1,0 +1,34 @@
+[ "$(uname -s | tr '[:upper:]' '[:lower:]')" = 'linux' ] && alias ls='ls --color=auto'
+alias ll='ls -lihF'
+alias la='ls -A'
+alias l='ll -A'
+
+alias t='tree'
+alias sudo='sudo '
+alias grep='grep -n --color=auto'
+alias j='jobs'
+alias df='df -h'
+alias du='du -ch'
+hash htop 2>/dev/null && alias top='htop'
+hash xscreensaver-command 2>/dev/null && alias lock='xscreensaver-command --lock'
+hash sqlmap 2>/dev/null && alias sqlmap='sqlmap --user-agent="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"'
+hash sqlmap 2>/dev/null && alias sqlmap-tor='sqlmap --tor --tor-type=SOCKS5'
+hash steam 2>/dev/null && alias steam='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete; steam'
+
+if hash chromium 2>/dev/null; then
+    chromium-tor() {
+        killall chromium
+        chromium --incognito --proxy-server="socks://localhost:9050"
+    }
+fi
+
+if hash dig 2>/dev/null; then
+    istheinternetonfire() {
+        txt=$(dig +short txt istheinternetonfire.com)
+        if hash cowsay 2>/dev/null; then
+            echo "$txt" | cowsay
+        else
+            echo "$txt"
+        fi
+    }
+fi
