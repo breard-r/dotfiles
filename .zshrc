@@ -106,3 +106,29 @@ clean()
 
     unfunction clean_dir
 }
+
+if hash rankmirrors 2>/dev/null; then
+    update_mirrorlist()
+    {
+        local pacman_dir="/etc/pacman.d"
+        local mirror_file="$pacman_dir/mirrorlist"
+        local mirror_pacnew="$mirror_file.pacnew"
+        local mirror_orig="$mirror_file.orig"
+        local mirror_tmp="/tmp/mirrorlist.tmp"
+
+        if [ -f "$mirror_pacnew" ]; then
+            echo "Using $mirror_file"
+            mv "$mirror_pacnew" "$mirror_orig"
+        fi
+
+        if [ ! -f "$mirror_orig" ]; then
+            echo "$mirror_orig: file not found" >&2
+            exit 1
+        fi
+
+        /usr/bin/grep 'Server' "$mirror_orig" | tr -d "#" > "$mirror_tmp"
+        rankmirrors -n 6 "$mirror_tmp" > "$mirror_file"
+        rm -f "$mirror_tmp"
+        pacman -Syy
+    }
+fi
