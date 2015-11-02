@@ -92,7 +92,7 @@ clean()
             find "$dir" -name ".*~" -print -delete
             find "$dir" -name "#*#" -print -delete
         else
-            echo "$dir: not a directory"
+            echo "$dir: not a directory" >&2
         fi
     }
 
