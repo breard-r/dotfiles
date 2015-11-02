@@ -186,7 +186,7 @@ if __name__ in ['config', '__main__']:
     auto_fullscreen = True
     wmname = 'LG3D'
     widget_defaults = {
-        'font': 'Arial',
+        'font': 'freesans',
         'fontsize': 16,
         'padding': 3,
     }
