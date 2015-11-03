@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.20 for rodolphe on Sat Oct 27 00:47:53 2012.
+# Written by xscreensaver-demo 5.33 for rodolphe on Wed Aug 12 16:37:20 2015.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -34,7 +34,7 @@ grabVideoFrames:    False
 chooseRandomImages: False
 imageDirectory:	
 
-mode:		one
+mode:		blank
 selected:	146
 
 textMode:	file
@@ -245,6 +245,19 @@ programs:								      \
   GL: 				hilbert -root				    \n\
   GL: 				tronbit -root				    \n\
 				electricsheep --root 1			    \n\
+  GL: 				geodesic -root				    \n\
+				hexadrop -root				    \n\
+  GL: 				kaleidocycle -root			    \n\
+  GL: 				quasicrystal -root			    \n\
+  GL: 				unknownpleasures -root			    \n\
+				binaryring -root			    \n\
+  GL: 				cityflow -root				    \n\
+  GL: 				geodesicgears -root			    \n\
+  GL: 				projectiveplane -root			    \n\
+  GL: 				romanboy -root				    \n\
+				tessellimage -root			    \n\
+  GL: 				winduprobot -root			    \n\
+  GL: 				splitflap -root				    \n\
 
 
 pointerPollTime:    0:00:05
@@ -255,4 +268,5 @@ GetViewPortIsFullOfLies:False
 procInterrupts:	True
 xinputExtensionDev: False
 overlayStderr:	True
+authWarningSlack:   20
 
