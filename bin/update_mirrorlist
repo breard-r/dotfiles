@@ -15,13 +15,13 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 pacman_dir="/etc/pacman.d"
-mirror_file="$pacman_dir/mirrorlist"
-mirror_pacnew="$mirror_file.pacnew"
-mirror_orig="$mirror_file.orig"
+mirror_file="${pacman_dir}/mirrorlist"
+mirror_pacnew="${mirror_file}.pacnew"
+mirror_orig="${mirror_file}.orig"
 mirror_tmp="/tmp/mirrorlist.tmp"
 
 if [ -f "$mirror_pacnew" ]; then
-    echo "Using $mirror_file"
+    echo "Using $mirror_pacnew"
     mv "$mirror_pacnew" "$mirror_orig"
 fi
 
