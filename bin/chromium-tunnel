@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -euo pipefail
+IFS=$'\n\t'
+
+SOCKS_PORT="1080"
+SOCKS_HOST="saturn"
+
+pgrep -f "$SOCKS_PORT $SOCKS_HOST" >/dev/null || ssh -f -N -D "$SOCKS_PORT" "$SOCKS_HOST" >/dev/null 2>&1 &
+chromium --proxy-server="socks://localhost:$SOCKS_PORT" >/dev/null 2>&1 &
