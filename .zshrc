@@ -41,9 +41,9 @@ fi
 
 # GPG Agent
 export GPG_TTY=$(tty)
-export GPG_AGENT_INFO="/run/user/${UID}/gnupg/S.gpg-agent"
-export SSH_AUTH_SOCK="/run/user/${UID}/gnupg/S.gpg-agent.ssh"
-export SSH_AGENT_PID=$(pgrep -x -u "${USER}" gpg-agent)
+[ -f "/run/user/${UID}/gnupg/S.gpg-agent" ] && export GPG_AGENT_INFO="/run/user/${UID}/gnupg/S.gpg-agent"
+[ -f "/run/user/${UID}/gnupg/S.gpg-agent.ssh" ] && export SSH_AUTH_SOCK="/run/user/${UID}/gnupg/S.gpg-agent.ssh"
+pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1 && export SSH_AGENT_PID=$(pgrep -x -u "${USER}" gpg-agent)
 
 # Aliases
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
