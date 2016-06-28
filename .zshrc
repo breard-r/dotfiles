@@ -41,10 +41,9 @@ fi
 
 # GPG Agent
 export GPG_TTY=$(tty)
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-    export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-fi
+export GPG_AGENT_INFO="/run/user/${UID}/gnupg/S.gpg-agent"
+export SSH_AUTH_SOCK="/run/user/${UID}/gnupg/S.gpg-agent.ssh"
+export SSH_AGENT_PID=$(pgrep -x -u "${USER}" gpg-agent)
 
 # Aliases
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"

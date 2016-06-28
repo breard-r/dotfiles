@@ -36,12 +36,10 @@ else
 fi
 
 # GPG Agent
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-    . "${HOME}/.gpg-agent-info"
-    export GPG_AGENT_INFO
-    export SSH_AUTH_SOCK
-fi
 export GPG_TTY=$(tty)
+export GPG_AGENT_INFO="/run/user/${UID}/gnupg/S.gpg-agent"
+export SSH_AUTH_SOCK="/run/user/${UID}/gnupg/S.gpg-agent.ssh"
+export SSH_AGENT_PID=$(pgrep -x -u "${USER}" gpg-agent)
 
 # Aliases
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
