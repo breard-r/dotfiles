@@ -1,0 +1,7 @@
+[options]
+font = inconsolata 9
+browser = chromium
+
+[colors]
+foreground = #ffffff
+background = rgba(0, 0, 0, 0.8)

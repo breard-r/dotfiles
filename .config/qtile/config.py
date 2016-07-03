@@ -27,7 +27,7 @@ import os
 class ConfigWrapper:
     def __init__(self):
         self.mod = 'mod4'
-        self.term = 'urxvt'
+        self.term = 'termite'
         self.border_focus = '#424242'
         self.date_format = '%a %d %B %Y %H:%M'
 
