@@ -16,6 +16,7 @@ Plugin 'antoyo/vim-licenses'         " Vim Plugin that Provides Commands to Add 
 Plugin 'vim-utils/vim-troll-stopper' " Stop Unicode trolls from messing with your code.
 Plugin 'breard-r/vim-dnsserial'      " Another DNS-zone serial number updater.
 Plugin 'sjl/badwolf'                 " A Vim color scheme.
+Plugin 'rust-lang/rust.vim'          " Vim configuration for Rust.
 call vundle#end()
 
 
