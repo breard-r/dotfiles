@@ -19,6 +19,10 @@
     undo = reset --soft HEAD^
     amend = commit --amend
 
+    ; ms: merge squash
+    ; Squash commits from the target branch and merge them into the current branch.
+    ms = merge --squash
+
     ;
     ; http://blogs.atlassian.com/2014/10/advanced-git-aliases/
     ;
@@ -27,10 +31,6 @@
     ; caa: commit amend append
     ; Take all uncommitted and un-staged changes currently in the working directory and add them to the previous commit.
     caa = commit -a --amend -C HEAD
-
-    ; bclean: branch clean
-    ; Remove local branches that have already been merged to master.
-    bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
 
     ; new: see new commits
     ; Displays commits created by the last command (typically after a git pull).
