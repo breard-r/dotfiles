@@ -1,6 +1,52 @@
-# If applied, this commit will...
+# (title) If applied, this commit will…
 
-# Explain why this change is being made
+# (body) Explain why this change is being made:
 
-# Provide links to any relevant tickets, articles or other resources
+# (footer) Provide links to any relevant tickets, articles or other
+# resources:
 
+
+# 1. Title
+# ========
+#
+# Format: [<scope>: ]<title>
+# The total length may not exceed 70 characters.
+#
+# The <title> must start with one of the following word:
+#
+# - Add: you add a new feature
+# - Remove: you remove a feature
+# - Change: you change something
+# - Fix: you fix a bug
+# - Release: you release a new version
+# - Test: you write some tests
+# - Merge: you merge some code
+# - Refactor: you refactor some code
+#
+# The <title> must be a single sentence where the first word is
+# capitalized and without a mark at the end. Use the imperative tone.
+# If you are tempted to write "and" in the title, then maybe you
+# should split the commit instead.
+#
+# On non-trivial projects, the title must be prefixed with a <scope>.
+# Some common scopes are:
+# - doc: documentation
+# - build: build system (eg: Makefile)
+# - meta: stuff that is not part of the project itself (eg: license)
+# - assets: files used by the project (eg: images)
+#
+#
+# 2. Body
+# =======
+#
+# Must be word-wrapped and lines may not exceed 74 characters.
+#
+#
+# 3. Footer
+# =========
+#
+# You may use "action #id" to:
+#  - resolve an issue: close|fix|resolve
+#  - mark for future reference: see|ref
+#  - other: reopen|hold|wontfix|invalidate
+# (GitHub) reference to another repository: username/repository#id
