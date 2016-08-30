@@ -63,6 +63,7 @@ class ConfigWrapper:
         self._add_key('Tab', lazy.layout.next())
         self._add_key('space', lazy.layout.rotate(), extra_mod='shift')
         self._add_key('space', lazy.next_layout())
+        self._add_key('f', lazy.window.toggle_floating())
         self._add_key('Right', lazy.screen.next_group())
         self._add_key('Left', lazy.screen.prev_group())
         self._add_key('w', lazy.window.kill())
