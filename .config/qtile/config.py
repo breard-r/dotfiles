@@ -51,6 +51,9 @@ class ConfigWrapper:
         self._add_key(access_key, lazy.group[name].toscreen())
         self._add_key(access_key, lazy.window.togroup(name), extra_mod='shift')
 
+    def _has_battery(self):
+        return len(glob('/sys/class/power_supply/BAT*')) > 0
+
     def set_wallpaper(self):
         images = glob(os.path.expanduser('~/pictures/wallpapers/enabled/*'))
         if images:
@@ -117,25 +120,25 @@ class ConfigWrapper:
         )
 
     def set_screens(self):
+        widgets = [
+            widget.GroupBox(),
+            widget.Prompt(),
+            widget.WindowName(),
+            widget.Systray(),
+            widget.Battery(
+                charge_char='↥',
+                discharge_char='↧',
+                update_delay=5
+            ),
+            widget.MemoryGraph(**self.graph_params('#CFCE44')),
+            widget.CPUGraph(**self.graph_params('#96AECF')),
+            widget.Clock(format=self.date_format),
+        ]
+        if not self._has_battery():
+            widgets = [w for w in widgets if not isinstance(w, widget.Battery)]
         screens = [
             Screen(
-                top=bar.Bar(
-                    [
-                        widget.GroupBox(),
-                        widget.Prompt(),
-                        widget.WindowName(),
-                        widget.Systray(),
-                        widget.Battery(
-                            charge_char='↥',
-                            discharge_char='↧',
-                            update_delay=5
-                        ),
-                        widget.MemoryGraph(**self.graph_params('#CFCE44')),
-                        widget.CPUGraph(**self.graph_params('#96AECF')),
-                        widget.Clock(format=self.date_format),
-                    ],
-                    30,
-                ),
+                top=bar.Bar(widgets, 30)
             ),
         ]
         return screens
