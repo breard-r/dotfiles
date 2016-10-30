@@ -89,7 +89,8 @@ class ConfigWrapper:
             ('remote', {'layout': 'max'}),
             ('email', {'layout': 'max'}),
             ('media', {'layout': 'xmonad-tall'}),
-            ('misc', {'layout': 'floating'}),
+            ('misc 1', {'layout': 'floating'}),
+            ('misc 2', {'layout': 'floating'}),
         ]
         for i, group in enumerate(groups):
             name, opts = group
