@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -euo pipefail
+IFS=$'\n\t'
+
+for name in 'pcmanfm' 'thunar'; do
+    if hash "$name" 2>/dev/null; then
+        "$name"
+        break
+    fi
+done
