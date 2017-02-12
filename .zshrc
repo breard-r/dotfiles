@@ -11,7 +11,9 @@ export PAGER='less'
 export USER_NICKNAME="Rodolphe Breard"
 export DEBEMAIL="packages+deb@what.tf"
 export DEBFULLNAME="$USER_NICKNAME"
-[[ ":$PATH:" == *":$HOME/bin:"* ]] || export PATH="$HOME/bin:$PATH"
+
+# Path
+[ -f ~/.setpath.sh ] && . ~/.setpath.sh
 
 # Colors
 [ "$CLICOLOR" -ne 0 ] && hash dircolors 2>/dev/null && eval $(dircolors -b)

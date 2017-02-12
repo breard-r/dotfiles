@@ -1,5 +1,6 @@
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+[ -f ~/.setpath.sh ] && . ~/.setpath.sh
 
 setxkbmap -option compose:menu
 setxkbmap -option compose:rwin
@@ -7,5 +8,3 @@ setxkbmap -option compose:rwin
 hash xcompmgr 2>/dev/null && xcompmgr &
 hash xscreensaver 2>/dev/null && xscreensaver -no-splash &
 hash gpg-agent 2>/dev/null && eval $(gpg-agent --daemon --enable-ssh-support)
-
-[[ ":$PATH:" == *":$HOME/bin:"* ]] || export PATH="$HOME/bin:$PATH"

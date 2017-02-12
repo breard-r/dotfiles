@@ -1,7 +1,7 @@
 [ -f ~/.xprofile ] && . ~/.xprofile
+[ -f ~/.setpath.sh ] && . ~/.setpath.sh
 
 DEFAULT_SESSION=qtile
-[[ ":$PATH:" == *":$HOME/bin:"* ]] || export PATH="$HOME/bin:$PATH"
 
 case "$1" in
     awesome)
