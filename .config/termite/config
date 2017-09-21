@@ -1,6 +1,6 @@
 [options]
 font = inconsolata 9
-browser = chromium
+browser = firefox
 
 [colors]
 foreground = #ffffff
