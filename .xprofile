@@ -2,8 +2,8 @@
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 [ -f ~/.setpath.sh ] && . ~/.setpath.sh
 
-setxkbmap -option compose:menu
 setxkbmap -option compose:rwin
+setxkbmap -option compose:menu
 
 hash xcompmgr 2>/dev/null && xcompmgr &
 hash xscreensaver 2>/dev/null && xscreensaver -no-splash &
