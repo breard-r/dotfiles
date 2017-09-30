@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -euo pipefail
+IFS=$'\n\t'
+
+LOCK_BG_FILE="/tmp/lock_screen.png"
+
+scrot "$LOCK_BG_FILE"
+mogrify -filter Gaussian -resize 50% -define filter:sigma=2.5 -resize 200% "$LOCK_BG_FILE"
+mogrify -font Liberation-Sans -fill white -undercolor '#00000080' -pointsize 30 -gravity South -annotate +0+200 "Screen locked" "$LOCK_BG_FILE"
+i3lock -e -i "$LOCK_BG_FILE"
