@@ -18,13 +18,6 @@ hash sqlmap 2>/dev/null && alias sqlmap='sqlmap --user-agent="Mozilla/5.0 (compa
 hash sqlmap 2>/dev/null && alias sqlmap-tor='sqlmap --tor --tor-type=SOCKS5'
 hash youtube-dl 2>/dev/null && alias audio-dl='youtube-dl -x --audio-quality 0 --audio-format "vorbis"'
 
-if hash chromium 2>/dev/null; then
-    chromium-tor() {
-        killall chromium
-        chromium --incognito --proxy-server="socks://localhost:9050"
-    }
-fi
-
 if hash dig 2>/dev/null; then
     istheinternetonfire() {
         txt=$(dig +short txt istheinternetonfire.com)
