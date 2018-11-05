@@ -31,3 +31,10 @@ if hash dig 2>/dev/null; then
         fi
     }
 fi
+
+if hash yay 2>/dev/null; then
+    reinstall_pattern() {
+        PATTERN="$1"
+        yay -S $(pacman -Qm | /bin/grep "$PATTERN" | cut -d ' ' -f1)
+    }
+fi
