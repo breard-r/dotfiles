@@ -49,6 +49,11 @@ nnoremap j gj
 nnoremap k gk
 
 
+" Fix a rendering issue with terminals without the bce capability
+" https://sw.kovidgoyal.net/kitty/faq.html#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
+let &t_ut=''
+
+
 " Licenses
 let g:licenses_copyright_holders_name = $USER_NICKNAME
 let g:licenses_authors_name = $USER_NICKNAME
