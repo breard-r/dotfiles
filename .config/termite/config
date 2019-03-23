@@ -1,7 +1,0 @@
-[options]
-font = inconsolata 9
-browser = firefox
-
-[colors]
-foreground = #ffffff
-background = rgba(0, 0, 0, 0.8)
