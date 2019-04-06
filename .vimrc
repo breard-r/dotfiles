@@ -58,3 +58,11 @@ let &t_ut=''
 let g:licenses_copyright_holders_name = $USER_NICKNAME
 let g:licenses_authors_name = $USER_NICKNAME
 let g:licenses_default_commands = ['affero', 'apache', 'bsd3', 'cecill', 'gfdl', 'gpl', 'gplv2', 'isc', 'lgpl', 'mit', 'mpl', 'verbatim']
+
+" Line number modes
+:set number relativenumber
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
