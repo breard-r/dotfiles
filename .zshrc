@@ -50,6 +50,9 @@ pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1 && export SSH_AGENT_PID=$(pgrep 
 # Aliases
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
 
+# Compose key
+[ -f ~/.set_compose_key.sh ] && . ~/.set_compose_key.sh
+
 # Pew
 hash pew 2>/dev/null && source $(pew shell_config)
 

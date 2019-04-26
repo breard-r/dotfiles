@@ -1,9 +1,7 @@
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 [ -f ~/.setpath.sh ] && . ~/.setpath.sh
-
-setxkbmap -option compose:rwin
-setxkbmap -option compose:menu
+[ -f ~/.set_compose_key.sh ] && . ~/.set_compose_key.sh
 
 hash xcompmgr 2>/dev/null && xcompmgr &
 hash xscreensaver 2>/dev/null && xscreensaver -no-splash &
