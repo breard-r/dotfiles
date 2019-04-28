@@ -3,7 +3,7 @@
 # a symbolic link to point to a file containing the name of the key that
 # will be used as a compose key.
 
-COMPOSE_KEY_FILE="$HOME/compose_key"
+COMPOSE_KEY_FILE="$HOME/.compose_key"
 
 if [ -f "$COMPOSE_KEY_FILE" ]; then
     COMPOSE_KEY=$(cat "$COMPOSE_KEY_FILE")
