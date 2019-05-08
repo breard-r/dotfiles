@@ -16,6 +16,16 @@ $ vim +PluginInstall +qall
 
 Plugins can be updated with `vim +PluginUpdate +qall`.
 
+Updating the Vundle submodule:
+
+``` console
+$ cd .vim/bundle/Vundle.vim
+$ git checkout master
+$ git pull
+$ cd -
+$ git commit -m 'Update Vundle'
+```
+
 
 ## qtile
 The wallpaper is randomly set from images (png, jpg and jpeg) from `~/pictures/wallpapers/enabled/`. You should populate this directory with symbolic links pointing to images stored in `~/pictures/wallpapers/`.
