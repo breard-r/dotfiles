@@ -21,6 +21,7 @@ hash sqlmap 2>/dev/null && alias sqlmap-tor='sqlmap --tor --tor-type=SOCKS5'
 hash youtube-dl 2>/dev/null && alias audio-dl='youtube-dl -x --audio-quality 0 --audio-format "vorbis"'
 hash jmtpfs 2>/dev/null && alias mount_android='jmtpfs "/media/android"'
 hash kitty 2>/dev/null && alias kitty_ssh='kitty +kitten ssh'
+hash nvim 2>/dev/null && alias vim='nvim'
 
 if hash dig 2>/dev/null; then
     istheinternetonfire() {
