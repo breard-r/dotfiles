@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -euo pipefail
+IFS=$'\n\t'
+
+COMPOSE_KEY_FILE="$HOME/.compose_key"
+
+if [ -f "$COMPOSE_KEY_FILE" ]; then
+    COMPOSE_KEY=$(cat "$COMPOSE_KEY_FILE")
+    export XKB_DEFAULT_OPTIONS="compose:$COMPOSE_KEY"
+fi
+
+/usr/bin/sway $*
