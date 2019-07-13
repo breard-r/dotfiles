@@ -1,3 +1,8 @@
+#!/bin/bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
 pacman_dir="/etc/pacman.d"
 mirror_file="${pacman_dir}/mirrorlist"
 mirror_pacnew="${mirror_file}.pacnew"
