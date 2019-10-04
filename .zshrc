@@ -56,5 +56,13 @@ pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1 && export SSH_AGENT_PID=$(pgrep 
 # Pew
 hash pew 2>/dev/null && source $(pew shell_config)
 
+# NVM
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+    . /usr/share/nvm/init-nvm.sh
+    export NVM_DIR="$HOME/.nvm"
+    export NVM_SOURCE="/usr/share/nvm"
+    [ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"
+fi
+
 # Exit with a success status
 true
