@@ -50,6 +50,15 @@ fi
 # Pew
 hash pew 2>/dev/null && source $(pew shell_config)
 
+# Java
+#
+# Use `archlinux-java` to change the default Java environment.
+# List directories in `/usr/lib/jvm/` to see all possible values.
+#
+# Example:
+#   sudo archlinux-java set java-13-openjdk
+export JAVA_HOME="/usr/lib/jvm/default"
+
 # NVM
 if [ -f /usr/share/nvm/init-nvm.sh ]; then
     . /usr/share/nvm/init-nvm.sh
