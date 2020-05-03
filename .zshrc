@@ -41,12 +41,6 @@ if [ -f "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.
     . "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
-# GPG Agent
-export GPG_TTY=$(tty)
-[ -S "/run/user/${UID}/gnupg/S.gpg-agent" ] && export GPG_AGENT_INFO="/run/user/${UID}/gnupg/S.gpg-agent"
-[ -S "/run/user/${UID}/gnupg/S.gpg-agent.ssh" ] && export SSH_AUTH_SOCK="/run/user/${UID}/gnupg/S.gpg-agent.ssh"
-pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1 && export SSH_AGENT_PID=$(pgrep -x -u "${USER}" gpg-agent)
-
 # Aliases
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
 
