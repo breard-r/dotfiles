@@ -40,3 +40,13 @@ if hash yay 2>/dev/null; then
         yay -S $(pacman -Qm | /bin/grep "$PATTERN" | cut -d ' ' -f1)
     }
 fi
+
+if hash gphoto2 2>/dev/null; then
+    if hash ffmpeg 2>/dev/null; then
+        if modinfo v4l2loopback >/dev/null 2>&1; then
+            webcam_dslr() {
+                gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video0
+            }
+        fi
+    fi
+fi
