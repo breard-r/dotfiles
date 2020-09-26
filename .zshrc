@@ -8,7 +8,7 @@ export SAVEHIST=1000
 export CLICOLOR=1
 export EDITOR='vim'
 export PAGER='less'
-export USER_NICKNAME="Rodolphe Breard"
+export USER_NICKNAME="Rodolphe Bréard"
 export DEBEMAIL="packages+deb@what.tf"
 export DEBFULLNAME="$USER_NICKNAME"
 
