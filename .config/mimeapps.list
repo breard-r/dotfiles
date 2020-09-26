@@ -10,6 +10,7 @@ image/webp=ristretto.desktop;gimp.desktop
 image/x-canon-cr2=darktable.desktop;ristretto.desktop;gimp.desktop
 image/x-xcf=gimp.desktop
 text/html=firefox.desktop
+text/plain=org.gnome.gedit.desktop;vim.desktop
 text/xml=firefox.desktop
 video/3gpp=mpv.desktop;vlc.desktop
 video/mp4=mpv.desktop;vlc.desktop
