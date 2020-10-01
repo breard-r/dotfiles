@@ -2,9 +2,9 @@ setopt no_beep inc_append_history hist_ignore_dups hist_ignore_space extended_gl
 bindkey -e
 bindkey "^[[3~"  delete-char
 bindkey "^[3;5~" delete-char
-export HISTFILE=~/.zsh_history
-export HISTSIZE=1000
-export SAVEHIST=1000
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=5000
+export SAVEHIST=100000
 export CLICOLOR=1
 export EDITOR='vim'
 export PAGER='less'
