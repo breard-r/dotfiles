@@ -1,4 +1,4 @@
-setopt nobeep appendhistory histignoredups histignorespace extendedglob nomatch notify
+setopt no_beep inc_append_history hist_ignore_dups hist_ignore_space extended_glob no_match notify
 bindkey -e
 bindkey "^[[3~"  delete-char
 bindkey "^[3;5~" delete-char
