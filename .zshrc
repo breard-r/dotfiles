@@ -47,6 +47,10 @@ fi
 # Compose key
 [ -f ~/.set_compose_key.sh ] && . ~/.set_compose_key.sh
 
+# skim
+[ -f "/usr/share/skim/key-bindings.zsh" ] && . /usr/share/skim/key-bindings.zsh
+[ -f "/usr/share/skim/completion.zsh" ] && . /usr/share/skim/completion.zsh
+
 # Pew
 hash pew 2>/dev/null && source $(pew shell_config)
 
