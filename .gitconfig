@@ -11,7 +11,7 @@
 
 [alias]
     co = checkout
-    df = diff
+    df = diff --color-words
     br = branch
     ci = commit
     st = status
