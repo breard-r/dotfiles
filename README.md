@@ -18,7 +18,7 @@ pacman -S i3status
 pacman -S i3lock scrot
 pacman -S grim
 # Graphical software
-pacman -S firefox gimp handbrake kitty pcmanfm rhythmbox ristretto thunderbird vlc zathura
+pacman -S firefox gedit gimp handbrake kitty pcmanfm rhythmbox ristretto tumbler thunderbird vlc zathura
 # Fonts
 pacman -S noto-fonts noto-fonts-emoji ttf-dejavu ttf-inconsolata ttf-liberation
 ```
