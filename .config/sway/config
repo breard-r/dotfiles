@@ -82,7 +82,11 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+c reload
 
     # lock the screen
-    #bindsym $mod+l exec swaylock -f -c 000000
+    # Note: $mod+l is already taken
+    bindsym Ctrl+Shift+l exec swaylock -f -c 000000
+
+    # Screenshot
+    bindsym Print exec grim
 
     # exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -198,9 +202,6 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-# Screenshot
-bindsym Print exec grim
 
 #
 # Status Bar:
