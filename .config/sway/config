@@ -199,6 +199,9 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Screenshot
+bindsym Print exec grim
+
 #
 # Status Bar:
 #
