@@ -2,6 +2,7 @@
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 [ -f ~/.setpath.sh ] && . ~/.setpath.sh
 [ -f ~/.set_compose_key.sh ] && . ~/.set_compose_key.sh
+[ -f ~/.xdg_set_env.sh ] && . ~/.xdg_set_env.sh
 
 hash xcompmgr 2>/dev/null && xcompmgr &
 hash xscreensaver 2>/dev/null && xscreensaver -no-splash &
