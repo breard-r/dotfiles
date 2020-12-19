@@ -5,15 +5,30 @@ This is just a bunch of dotfiles.
 
 ## ArchLinux packages
 
-```
-pacman -S tmux zsh htop neovim kitty-terminfo
-pacman -S nmap sqlmap youtube-dl
-pacman -S xdg-user-dirs shared-mime-info
+``` sh
+# Base utils
+pacman -S htop kitty-terminfo neovim openssh tmux transmission-cli tree wget whois zsh
+pacman -S shared-mime-info xdg-user-dirs
+# Rust
+pacman -S cargo-audit cargo-outdated cargo-release rustup
+# CLI software
+pacman -S bind exiv2 imagemagick nmap rsync sqlmap youtube-dl
+# WM
+pacman -S i3status
+pacman -S i3lock scrot
+pacman -S grim
+# Graphical software
+pacman -S firefox gimp handbrake kitty pcmanfm rhythmbox ristretto thunderbird vlc zathura
+# Fonts
+pacman -S noto-fonts noto-fonts-emoji ttf-dejavu ttf-inconsolata ttf-liberation
 ```
 
-```
+``` sh
+# Base utils
 yay -S liquidprompt
+# Printer
 yay -S brother-dcp1610w brscan-skey brscan4
+# Graphical software
 yay -S cardpeek
 ```
 
