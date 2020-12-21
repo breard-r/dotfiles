@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -euo pipefail
+IFS=$'\n\t'
+
+WALLPAPER_DIRECTORY="$HOME/pictures/wallpapers/enabled"
+WALLPAPER_FILE="$(find "$WALLPAPER_DIRECTORY" -type l -print | shuf | head -n 1)"
+
+case "$1" in
+    sway)
+        swaymsg --quiet output "*" bg "$WALLPAPER_FILE" fill
+        ;;
+    *)
+        hash feh 2>/dev/null && feh --bg-scale "$WALLPAPER_FILE"
+        ;;
+esac

@@ -7,4 +7,4 @@
 hash xcompmgr 2>/dev/null && xcompmgr &
 hash xscreensaver 2>/dev/null && xscreensaver -no-splash &
 hash gpg-agent 2>/dev/null && eval $(gpg-agent --daemon --enable-ssh-support)
-hash feh 2>/dev/null && feh --bg-scale "$(find 'pictures/wallpapers/enabled/' -type l -print | shuf | head -n 1)"
+hash set_wallpaper 2>/dev/null && set_wallpaper feh
