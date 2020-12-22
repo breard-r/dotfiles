@@ -7,12 +7,13 @@ This is just a bunch of dotfiles.
 
 ``` sh
 # Base utils
-pacman -S htop kitty-terminfo neovim openssh tmux transmission-cli tree wget whois zsh
+pacman -S htop kitty-terminfo neovim openssh tmux transmission-cli tree wget whois zsh zsh-syntax-highlighting
 pacman -S shared-mime-info xdg-user-dirs
+pacman -S skim
 # Rust
 pacman -S cargo-audit cargo-outdated cargo-release rustup
 # CLI software
-pacman -S bind exiv2 imagemagick nmap rsync sqlmap youtube-dl
+pacman -S bind exiv2 imagemagick mkcert nmap rsync sqlmap youtube-dl
 # WM
 pacman -S i3status
 pacman -S i3lock scrot
