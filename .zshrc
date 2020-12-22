@@ -63,13 +63,5 @@ hash pew 2>/dev/null && source $(pew shell_config)
 #   sudo archlinux-java set java-13-openjdk
 export JAVA_HOME="/usr/lib/jvm/default"
 
-# NVM
-if [ -f /usr/share/nvm/init-nvm.sh ]; then
-    . /usr/share/nvm/init-nvm.sh
-    export NVM_DIR="$HOME/.nvm"
-    export NVM_SOURCE="/usr/share/nvm"
-    [ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"
-fi
-
 # Exit with a success status
 true
