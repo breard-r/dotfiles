@@ -44,6 +44,9 @@ fi
 # Aliases
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
 
+# Proxy settings
+[ -f "$HOME/.proxy" ] && . "$HOME/.proxy"
+
 # Compose key
 [ -f ~/.set_compose_key.sh ] && . ~/.set_compose_key.sh
 

@@ -45,3 +45,6 @@ pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1 && export SSH_AGENT_PID=$(pgrep 
 
 # Aliases
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
+
+# Proxy settings
+[ -f "$HOME/.proxy" ] && . "$HOME/.proxy"
