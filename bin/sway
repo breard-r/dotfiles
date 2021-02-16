@@ -9,6 +9,6 @@ if [ -f "$COMPOSE_KEY_FILE" ]; then
     COMPOSE_KEY=$(cat "$COMPOSE_KEY_FILE")
     export XKB_DEFAULT_OPTIONS="compose:$COMPOSE_KEY"
 fi
-[ -f ~/.xdg_set_env.sh ] && . ~/.xdg_set_env.sh
+[ -f "$HOME/.xdg_set_env.sh" ] && . "$HOME/.xdg_set_env.sh"
 
-/usr/bin/sway $*
+/usr/bin/sway "$@"
