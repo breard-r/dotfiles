@@ -13,7 +13,7 @@ pacman -S skim
 # Rust
 pacman -S cargo-audit cargo-outdated cargo-release rustup
 # CLI software
-pacman -S bind exiv2 imagemagick mkcert nmap rsync sqlmap youtube-dl
+pacman -S bind exiv2 imagemagick mkcert nmap rsync shellcheck sqlmap youtube-dl
 # WM
 pacman -S i3status
 pacman -S i3lock scrot
