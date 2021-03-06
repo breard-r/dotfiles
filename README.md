@@ -60,3 +60,16 @@ git commit -m 'Update Vundle'
 ## wallpaper
 
 The wallpaper is randomly set from images (png, jpg and jpeg) from `~/pictures/wallpapers/enabled/`. You should populate this directory with symbolic links pointing to images stored in `~/pictures/wallpapers/`.
+
+
+## /etc/locale.conf
+
+```
+cat >/etc/locale.conf << EOF
+LANG=en_US.UTF-8
+LC_ADDRESS=fr_FR.UTF-8
+LC_MEASUREMENT=fr_FR.UTF-8
+LC_PAPER=fr_FR.UTF-8
+LC_TIME=fr_FR.UTF-8
+EOF
+```
